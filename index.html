@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>NewsIQ</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  	<![endif]-->
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+		.pattern .legal div {
+			max-height: 0;
+			overflow: hidden;
+			margin: 0;
+		}
+
+		.pattern .legal h1 a {
+			display: block;
+			position: relative;
+		}
+
+		.pattern #disclaimer:target div {
+			max-height: 10099px;
+			margin: 16px 0;
+			-webkit-transition: max-height 0.5s ease-out;
+			-moz-transition: max-height 0.5s ease-out;
+			-ms-transition: max-height 0.5s ease-out;
+			-o-transition: max-height 0.5s ease-out;
+			transition: max-height 0.5s ease-out;
+		}
+
+		input {
+			max-width: 500px;
+			width: 100%;
+			height: 36px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 15px;
+			font-family: 'Ubuntu';
+			font-size: 1.0em;
+			padding-left: 20px;
+			color: #12132f
+		}
+
+		html {
+			box-sizing: border-box;
+		}
+
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: 'Ubuntu';
+			background: #12132f;
+			color: white;
+		}
+
+		section {
+			position: relative;
+			width: 100%;
+		}
+
+		footer {
+			position: relative;
+			padding: 2.4em 2em;
+			font-family: Ubuntu, Helvetica, Arial, sans-serif;
+			font-size: .7em;
+			line-height: 1.7em;
+			text-align: center;
+			color: #ddd;
+			background: #00b3bb;
+			z-index: 99;
+		}
+
+		.cl {
+			display: block;
+			clear: both;
+		}
+
+		.section-mobile {
+			/*background-image: url('../img/devices_bg.jpg');*/
+			background-size: 60%;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+		.section-mobile img {
+			position: absolute;
+			z-index: 10000;
+			max-width: 1400px;
+		}
+
+		.section-cta {
+			background-image: url("https://images.dowjones.com/wp-content/uploads/sites/35/2017/12/05172718/section-cta-header.png");
+			background-size: cover;
+			background-position: center;
+		}
+
+		.section-cta .cta-wrapper {
+			padding-top: 0%;
+		}
+
+		.successMessage {
+			display: none;
+		}
+
+		.disclaimer-copy {
+			font-size: 20px;
+			padding-left: 40px;
+		}
+
+		.disclaimer-float-left {
+			float: left;
+			max-width: 500px;
+		}
+
+		.disclaimer-float-right {
+			float: left;
+			max-width: 515px;
+			padding-left: 50px;
+		}
+
+		::-webkit-input-placeholder {
+			/* Chrome/Opera/Safari */
+			color: #ccc;
+			font-family: 'Ubuntu';
+			font-size: 1.0em;
+		}
+
+		::-moz-placeholder {
+			/* Firefox 19+ */
+			color: #ccc;
+			font-family: 'Ubuntu';
+			font-size: 1.0em;
+		}
+
+		:-ms-input-placeholder {
+			/* IE 10+ */
+			color: #ccc;
+			font-family: 'Ubuntu';
+			font-size: 1.0em;
+		}
+
+		:-moz-placeholder {
+			/* Firefox 18- */
+			color: #ccc;
+			font-family: 'Ubuntu';
+			font-size: 1.0em;
+		}
+
+		.section-contact {
+			background-color: #00b3bb
+		}
+
+		.section-contact .holder {
+			max-width: 1400px;
+			margin: 0 auto;
+		}
+
+		.section-contact .cta-wrapper {
+			max-width: 100%;
+		}
+
+		.disclaimer {
+			font-weight: 300;
+			padding: 0;
+			margin-top: 0px;
+			font-size: 20px;
+		}
+
+		#submit-form {
+			width: 250px;
+			height: 53px;
+			border-radius: 5px;
+			background-color: #12132f;
+			color: #fff;
+			font-family: 'Ubuntu';
+			font-size: 27px;
+			letter-spacing: 0.1em;
+			font-weight: 600;
+			border: none;
+			margin-top: 20px;
+		}
+
+		.footer-link {
+			color: #fff;
+		}
+
+		.svg-logo {
+			position: relative;
+			margin: 0 0 0 24px;
+			text-decoration: none;
+			vertical-align: middle;
+			fill: #e50914;
+			display: inline-block;
+			line-height: 90px;
+			z-index: 1;
+		}
+
+		.newsiq-logo {
+			height: 325px;
+			width: 200px;
+			vertical-align: middle;
+		}
+
+		.backdrop,
+		.diag {
+			position: relative;
+			width: 100%;
+			height: auto;
+			text-align: right;
+			z-index: 0;
+		}
+
+		.backdrop>img {
+			width: 140%;
+		}
+
+		.cta-wrapper {
+			position: relative;
+			z-index: 13;
+			left: 0;
+			padding: 0 24px;
+			width: 100%;
+		}
+
+		.cta-wrapper p {
+			padding-bottom: 20px;
+			color: #fff;
+			font-weight: 100;
+			font-size: 0.9em;
+		}
+
+		.content-wrapper {}
+
+		.cta-wrapper .cta-pitch {
+			font-family: 'Ubuntu';
+			color: #fff;
+			margin: 0 0 .5em;
+			font-size: 2em;
+			line-height: 1.2em;
+			font-weight: 100;
+		}
+
+		.section-cta .cta-wrapper .cta-pitch {
+			font-size: 2.6em;
+		}
+
+		.cta-wrapper .cta-signup {
+			font-size: 1.6em;
+		}
+
+		.cta-signup-input-group {
+			margin: 0 0 1.4em;
+		}
+
+		.cta-wrapper .cta-signup>span {
+			display: block;
+			margin: 0 0 1.4em;
+			color: #fff;
+		}
+
+		.section-mobile .cta-wrapper .cta-signup>span {
+			padding-top: 42px;
+			font-size: .94em;
+		}
+
+		.cta-wrapper .cta-agreement,
+		.cta-wrapper .cta-copy {
+			margin: 0 0 1em;
+			font-size: 0.9em;
+			line-height: 1.5;
+			color: #ddd;
+		}
+
+		.cta-wrapper .cta-agreement {
+			margin: 0 0 .8em;
+			font-size: 1em;
+		}
+
+		.section-mobile .cta-wrapper {
+			width: 100%;
+			max-width: 70%;
+			position: relative;
+			-webkit-transform: translate(0, 0);
+			-moz-transform: translate(0, 0);
+			-ms-transform: translate(0, 0);
+			-o-transform: translate(0, 0);
+			transform: translate(0, 0);
+		}
+
+		.section-mobile .cta-wrapper .cta-copy {
+			margin: 0 0 2.4em;
+		}
+
+		.cta-wrapper .cta-signup .cta-signup-input {
+			margin-bottom: 0;
+			padding: .9rem .75rem;
+			font-family: 'Ubuntu';
+			font-size: 1.2rem;
+			line-height: 1.25;
+			color: #000;
+			background-color: #ddd;
+			background-image: none;
+			-webkit-background-clip: padding-box;
+			background-clip: padding-box;
+			border: none;
+			position: relative;
+			z-index: 2;
+		}
+
+		.cta-wrapper .cta-signup .cta-signup-btn {
+			padding: 0.8rem 1.6rem;
+			font-family: 'Ubuntu';
+			font-size: 1.0em;
+			letter-spacing: .30em;
+			font-weight: 600;
+			color: #fff;
+			border-radius: 5px;
+			border: none;
+			text-transform: uppercase;
+			background-color: #00B3BB;
+		}
+
+		.cta-wrapper .cta-signup .cta-signup-btn:hover {
+			background-color: #21b6bc;
+			cursor: pointer;
+		}
+
+		.content-wrapper {
+			width: 600px;
+		}
+
+		.mobile-msg {
+			padding: 2em;
+			width: 100%;
+			height: 100%;
+			font-size: 1.6em;
+			text-align: center;
+			color: #ddd;
+			background: #3f3f3f;
+			display: none;
+		}
+
+		.backdrop>.testimonials {
+			position: relative;
+			padding: 3%;
+			font-size: 2.3vw;
+		}
+
+		.testimonials>.headshot {
+			position: absolute;
+			width: 22%;
+			border-radius: 50%/50%;
+			overflow: hidden;
+		}
+
+		.testimonials img {
+			width: 700px;
+		}
+
+		.testimonials>span {
+			position: absolute;
+			width: 21.5%;
+			text-align: left;
+			font-size: 1em;
+			line-height: 1.5;
+			color: #ddd;
+		}
+
+		.container {
+			position: relative;
+			float: left;
+			margin-bottom: 23px;
+		}
+
+		.container input {
+			position: absolute;
+			opacity: 0;
+		}
+
+		.checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			width: 25px;
+			border: 1px #fff solid;
+		}
+
+		.container:hover input~.checkmark {
+			background-color: #ccc;
+		}
+
+		.container input:checked~.checkmark {
+			background-color: #12132f;
+		}
+
+		.checkmark:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+
+		.container input:checked~.checkmark:after {
+			display: block;
+		}
+
+		.container .checkmark:after {
+			left: 9px;
+			top: 5px;
+			width: 5px;
+			height: 10px;
+			border: solid white;
+			border-width: 0 3px 3px 0;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		.testimonials {
+			float: right;
+			margin-top: -10%;
+		}
+
+		/* --------------------------------------------------------------------------------------------------------------- */
+
+		/* --------------------------------------------------------------------------------------------------------------- */
+
+		/* --------------------------------------------------------------------------------------------------------------- */
+
+		/* ------------------------------------------------ media queries ------------------------------------------------ */
+
+		/* --------------------------------------------------------------------------------------------------------------- */
+
+		/* --------------------------------------------------------------------------------------------------------------- */
+
+		/* --------------------------------------------------------------------------------------------------------------- */
+
+		@media (max-width:2560px) {
+			.wrapper {
+				max-width: 1340px;
+				margin: 0 auto;
+			}
+			.disclaimer {
+				padding-bottom: 0px !important;
+			}
+			.cta-wrapper .cta-signup .cta-signup-btn {
+				padding: 0.8rem 1.6rem;
+				font-family: 'Ubuntu';
+				font-size: 1.0em;
+				letter-spacing: 0.1em;
+				font-weight: 600;
+				color: #fff;
+				border-radius: 5px;
+				border: none;
+				text-transform: uppercase;
+				background-color: #00B3BB;
+				transform: scale(0.7, 0.7);
+				margin-left: -36px;
+				width: 243px;
+			}
+			section {
+				position: relative;
+				width: 100%;
+				min-height: 600px !important;
+				padding-left: 5%;
+				padding-right: 5%;
+			}
+			.section-mobile {
+				background-size: 50%;
+				background-repeat: no-repeat;
+				background-position: top center;
+			}
+			.section-mobile .cta-wrapper .cta-pitch {
+				max-width: 500px;
+			}
+			.testimonials {
+				float: right;
+				margin-top: -230px;
+			}
+			.section-revolutionary .testimonials {
+				float: right;
+				margin-top: -280px;
+			}
+			.cta-wrapper {
+				padding-top: 5%;
+			}
+			.section-cta {
+				background-image: url("https://images.dowjones.com/wp-content/uploads/sites/35/2017/12/05172718/section-cta-header.png");
+				background-size: 1700px;
+				background-position: top center;
+				min-height: 662px !important;
+				background-repeat: no-repeat;
+			}
+			.section-cta .cta-wrapper .cta-pitch {
+				font-size: 2.5em;
+				max-width: 600px;
+			}
+			.cta-wrapper p {
+				max-width: 350px;
+				font-size: 1.0em;
+				line-height: 1.5em;
+			}
+			.section-contact .cta-wrapper p {
+				font-size: .875em;
+			}
+			.disclaimer-copy {
+				font-size: 0.875em;
+				margin-top: 4px;
+				display: inline-block;
+			}
+			.cta-wrapper .cta-pitch {
+				font-size: 1.875em;
+				max-width: 340px;
+			}
+			.cta-wrapper .cta-agreement,
+			.cta-wrapper .cta-copy {
+				margin: 0 0 1em;
+				font-size: 1.0em;
+				line-height: 1.5;
+				color: #ddd;
+			}
+			.section-contact {
+				padding-top: 0%;
+				min-height: 465px !important;
+			}
+			.section-mobile {
+				min-height: 900px !important;
+			}
+			.section-mobile img {
+				width: 1300px;
+			}
+			.deviceHolder {
+				width: 650px;
+				margin: 0 auto;
+			}
+			#submit-form {
+				width: 170px;
+				height: 36px;
+				border-radius: 5px;
+				background-color: #12132f;
+				color: #fff;
+				font-family: 'Ubuntu';
+				font-size: 1.0em;
+				letter-spacing: 0.1em;
+				font-weight: 600;
+				border: none;
+				margin-top: 20px;
+				cursor: pointer;
+			}
+		}
+
+		@media (max-width:1440px) {
+			section {
+				position: relative;
+				width: 100%;
+				min-height: 500px !important;
+			}
+			.section-cta {
+				background-size: 1500px;
+				min-height: 555px !important;
+			}
+			.section-mobile img {
+				width: 1000px;
+			}
+			.deviceHolder {
+				width: 550px;
+				margin: 0 auto;
+			}
+			.section-mobile {
+				min-height: 800px !important;
+			}
+			.testimonials img {
+				width: 600px;
+			}
+			.section-contact {
+				padding-top: 0%;
+				min-height: 600px !important;
+			}
+			.disclaimer-float-right {
+				float: left;
+				max-width: 500px;
+				padding-left: 50px;
+			}
+		}
+
+		@media (max-width: 1060px) {
+			.disclaimer-float-right {
+				padding-left: 0px;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			.testimonials img {
+				width: 400px;
+			}
+			.section-mobile img {
+				width: 800px;
+			}
+			.deviceHolder {
+				width: 500px;
+				margin: 0 auto;
+			}
+		}
+
+		@media (max-width: 900px) {}
+
+		@media (max-width: 800px) {
+			section {
+				min-height: 300px !important;
+			}
+			.section-mobile {
+				min-height: 500px !important;
+			}
+			.testimonials img {
+				width: 300px;
+			}
+			.disclaimer-float-right {
+				float: left;
+				max-width: 515px;
+				padding-left: 0px;
+			}
+			.section-mobile img {
+				position: absolute;
+				z-index: 10000;
+				max-width: 500px;
+			}
+			.deviceHolder {
+				width: 500px;
+				margin: 0 auto;
+			}
+		}
+
+		@media (max-width: 745px) {
+			.section-revolutionary .testimonials {
+				float: none;
+				margin-top: 0;
+			}
+			.testimonials {
+				float: none;
+				margin-top: 0%;
+				padding-right: 5%;
+			}
+		}
+
+		@media (max-width: 500px) {
+			.section-revolutionary .testimonials {
+				padding-left: 0%;
+			}
+			.testimonials {
+				float: none;
+				margin-top: 0;
+				padding-right: 0%;
+				padding-left: 5%;
+			}
+			.testimonials img {
+				width: 325px;
+			}
+			.section-cta {
+				background-size: 1250px;
+				min-height: 450px !important;
+			}
+			.newsiq-logo {
+				height: 180px;
+				width: 200px;
+				vertical-align: middle;
+			}
+			.section-mobile {
+				min-height: 400px !important;
+			}
+			section {
+				min-height: 430px !important;
+				padding-left: 0%;
+				padding-right: 2%;
+			}
+			.cta-wrapper .cta-agreement,
+			.cta-wrapper .cta-copy {
+				font-size: 0.9em;
+			}
+			.cta-wrapper p {
+				max-width: 460px;
+				font-size: 0.9em;
+				line-height: 1.5em;
+			}
+			.cta-wrapper .cta-signup .cta-signup-btn {
+				font-size: 0.9em;
+			}
+			.section-cta .cta-wrapper .cta-pitch {
+				font-size: 1.5em;
+			}
+			.section-cta .cta-wrapper .cta-pitch {
+				font-size: 2.0em;
+			}
+			.section-mobile img {
+				position: absolute;
+				z-index: 10000;
+				max-width: 300px;
+			}
+			.deviceHolder {
+				width: 300px;
+				margin: 0 auto;
+			}
+			.cta-wrapper .cta-pitch {
+				font-size: 1.375em;
+			}
+		}
+
+		@media (max-width: 320px) {
+			section {
+				min-height: 430px !important;
+				padding-left: 0%;
+				padding-right: 2%;
+			}
+			.newsiq-logo {
+				height: 180px;
+				width: 200px;
+				vertical-align: middle;
+			}
+			.cta-wrapper .cta-signup .cta-signup-btn {
+				font-size: 0.9em;
+			}
+			.section-cta .cta-wrapper .cta-pitch {
+				font-size: 1.5em;
+			}
+			.section-cta {
+				background-size: 1250px;
+				min-height: 450px !important;
+			}
+			.section-revolutionary .testimonials {
+				padding-left: 0%;
+			}
+			.testimonials {
+				padding-left: 5%;
+				padding-right: 0%;
+				margin-top: -10% !important;
+			}
+			.testimonials img {
+				width: 280px;
+			}
+			.section-revolutionary .testimonials img {
+				width: 300px;
+			}
+			.section-mobile img {
+				position: absolute;
+				z-index: 10000;
+				max-width: 270px;
+			}
+			.section-mobile .cta-wrapper {
+				max-width: 90%;
+			}
+			.section-mobile {
+				min-height: 350px !important;
+			}
+			.section-publishers {
+				min-height: 380px !important
+			}
+			.section-contact {
+				padding-top: 0%;
+				min-height: 630px !important;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<section class="section-cta">
+		<div class="wrapper">
+			<a class="svg-logo" href="/">
+				<img class="newsiq-logo" src="https://dl.dropboxusercontent.com/s/4sl8ssc3l53kzcb/newsiq.svg">
+			</a>
+
+			<div class="cta-wrapper">
+				<h1 class="cta-pitch">
+
+
+				<div class="cta-signup">
+					<div class="cta-signup-input-group">
+						<a href="mailto:advertising@newsiq.net">
+							<button class="cta-signup-btn">CONTACT US</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="section-revolutionary">
+		<div class="wrapper">
+			<div class="cta-wrapper">
+				<h1 class="cta-pitch">Scalable First Party Data and Premium Editorial Drives Results</h1>
+
+
+				<p class="cta-copy">News IQ leverages its exclusive first party data and centralized consumer identity to generate better business outcomes
+					at scale.</p>
+			</div>
+
+
+			<div class="testimonials">
+				<img src="https://images.dowjones.com/wp-content/uploads/sites/35/2017/12/05172721/section1_right.png">
+			</div>
+		</div>
+	</section>
+
+
+	<section class="section-publishers">
+		<div class="wrapper">
+			<div class="cta-wrapper">
+				<h1 class="cta-pitch">Guaranteed Brand Safe Environments at Scale</h1>
+
+
+				<p class="cta-copy">All audiences are activated with 3 layers of brand safety within a premium environment, where real people find real news
+					and information.</p>
+			</div>
+
+
+			<div class="testimonials">
+				<img src="https://images.dowjones.com/wp-content/uploads/sites/35/2017/12/05172723/section2_right.png">
+			</div>
+		</div>
+	</section>
+
+
+	<section class="section-mobile">
+		<div class="wrapper">
+			<div class="cta-wrapper">
+				<h1 class="cta-pitch">Pair Premium Audiences with High Impact Cross-Device Messaging</h1>
+				<br>
+				<br>
+				<div class="deviceHolder">
+					<img src="https://images.dowjones.com/wp-content/uploads/sites/35/2017/12/05172715/devices2.png">
+				</div>
+
+				<div class="backdrop backdrop-img">
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- 	<section class="section-contact">
+		<div class="wrapper">
+			<div class="cta-wrapper">
+				<h1 class="cta-pitch">Contact us</h1>
+				<br>
+
+
+				<div class="successMessage">
+					Thank you for contacting us. You will hear from us shortly.
+				</div>
+
+
+				<form id="test-form" name="test-form" style="position: relative;">
+					<div class="disclaimer-float-left">
+						<input name="FirstName" placeholder="First Name" type="text"> <input name="LastName" placeholder="Last Name" type="text"> <input name="Title" placeholder="Title" type="text"> <input name="Company" placeholder="Company" type="text"> <input name="Email" placeholder="Email" type="text"> <input name="Phone" placeholder="Phone" type="text">
+					</div>
+
+
+					<div class="disclaimer-float-right">
+						<p class="disclaimer">By providing my email above, I understand I will receive updates about the NewsIQ app as well as a periodic NewsIQ newsletter, from which I may unsubscribe using the links provided.</p>
+						<label class="container"><input class="checkbox" name="checkbox" style="width: 20px; height: 20px;" type="checkbox" value="check"> <span class="checkmark"></span></label> <span class="disclaimer-copy">I agree to the <a href="#" style="color: #fff;">Privacy Policy</a> and <a href="#" style="color: #fff;">Cookie Policy</a></span><br>
+						<button id="submit-form" type="submit">SUBMIT</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section> -->
+
+	<footer style="min-height: 100px !important; padding-top: 50px; border-top:1px #fff solid;">
+
+		<div style="max-width: 800px; margin: 0 auto; display: block;">
+			<table cellpadding="0" cellspacing="0" class="pattern">
+				<tr>
+					<td class="legal" id="disclaimer" width="800" align="left" valign="top" style="font-size: 13px; color: #fff; padding: 0 0 16px 0;">
+						<h1 style="margin: 0 auto; max-width: 400px; text-align: left;">
+							<a href="#disclaimer" style="text-decoration: none; color: #fff; padding-left: 60px; font-size: 14px; text-align: center; float: left; padding-right: 20px;">News IQ Privacy Notice</a>
+							<a href="#disclaimer" style="text-decoration: none; color: #fff; font-size: 14px; text-align: center; float: left;">Your Ad Choices</a>
+							<br />
+							<span style="font-size:13px;">Copyright NC Audience Exchange, LLC 2018 All Rights Reserved</span>
+						</h1>
+						<div style="color: #fff !important; font-size: 14px; text-decoration: none !important;">
+
+
+
+							<p>
+								<strong>News IQ Privacy Notice</strong>
+							</p>
+							<p>
+								<strong>Updated: April 17, 2018</strong>
+							</p>
+							<p>News IQ (formally known as News Corp Connect), an offering of NC Audience Exchange (NCAE, or &ldquo;Company&rdquo;,
+								&ldquo;we&rdquo; or &ldquo;us&rdquo;), leverages the power and knowledge of the users of the News Corporation family
+								of brands and properties, together with compelling market research and data science, to bring the most relevant content
+								and advertising to users. This Privacy Notice (&ldquo;Notice&rdquo;) applies to information obtained by NCAE about
+								you as a user of our Company affiliates websites and mobile applications, and from other sources as described below,
+								and to information obtained by NCAE from potential advertisers, partners and other users who visit our sales/promotional
+								site to learn more about our offerings.</p>
+							<p>We do not target children, and we do not knowingly collect personal information from children under 13 years of age.</p>
+
+							<ul>
+								<li id="section1_btn" style="cursor: pointer;">
+									<u>Information We Obtain</u>
+									<ul>
+										<li id="section1_1_btn" style="cursor: pointer;">
+											<em>
+												<u>Personal Information</u>
+											</em>
+										</li>
+										<li id="section1_2_btn" style="cursor: pointer;">
+											<em>
+												<u>Other Data</u>
+											</em>
+										</li>
+										<li id="section1_3_btn" style="cursor: pointer;">
+											<em>
+												<u>Activity Information</u>
+											</em>
+										</li>
+										<li id="section1_4_btn" style="cursor: pointer;">
+											<em>
+												<u>Information About Users of NCAE&rsquo;s Sales/Promotional Site</u>
+											</em>
+										</li>
+									</ul>
+								</li>
+								<li id="section2_btn" style="cursor: pointer;">
+									<u>How We Use the Information We Obtain</u>
+								</li>
+								<li id="section3_btn" style="cursor: pointer;">
+									<u>Interest-Based Advertising</u>
+								</li>
+								<li id="section4_btn" style="cursor: pointer;">
+									<u>Information We Share</u>
+								</li>
+								<li id="section5_btn" style="cursor: pointer;">
+									<u>Your Choices</u>
+									<ul id="section5_1_btn" style="cursor: pointer;">
+										<li>
+											<em>
+												<u>Accessing, Reviewing, Updating and Modifying Personal Information</u>
+											</em>
+										</li>
+									</ul>
+								</li>
+								<li id="section6_btn" style="cursor: pointer;">
+									<u>Notice to California Residents</u>
+								</li>
+								<li id="section7_btn" style="cursor: pointer;">
+									<u>How We Protect and Retain Personal Information</u>
+								</li>
+								<li id="section8_btn" style="cursor: pointer;">
+									<u>Transfers of Information</u>
+								</li>
+								<li id="section9_btn" style="cursor: pointer;">
+									<u>Updates to Our Privacy Notice</u>
+								</li>
+								<li id="section10_btn" style="cursor: pointer;">
+									<u>How To Contact Us</u>
+								</li>
+							</ul>
+							<div id="section1">
+
+								<p>
+									<strong>
+										<u>Information We Obtain</u>
+									</strong>
+								</p>
+							</div>
+							<p>We receive information about users of News Corporation brands and properties, including personal information, from
+								our Company affiliates and their sites and applications; surveys and publicly and commercially available sources;
+								social media networks; and in the future, of users of business partners&rsquo; sites and applications that are not
+								affiliated with us.</p>
+							<p>We collect Personal Information to offer services that we have a legitimate interest to believe are of interest to
+								our customers and/or that you have requested, to manage the relationship we have with our customers, and to perform
+								activities based on your consent where required by law. A current list of our participating affiliated companies is available at <span id="companiesList_btn" style="cursor:pointer; text-decoration: underline;">here</span>.</p>
+							<p>&nbsp;</p>
+							<div id="section1_1">
+
+								<p>
+									<strong>
+										<u>Personal Information</u>
+									</strong>
+								</p>
+							</div>
+							<p>The types of personal information the Company may obtain include but are not limited to name, postal and/or billing
+								address, email address, telephone and/or mobile numbers, geo-location, and username (&ldquo;Personal Information&rdquo;).</p>
+							<p>&nbsp;</p>
+							<div id="section1_2">
+
+								<p>
+									<strong>
+										<u>Other Data</u>
+									</strong>
+								</p>
+							</div>
+							<p>We may obtain other information provided by you to the Company or our affiliates, such as date of birth, preferences,
+								demographical and occupational data. You may provide this information, for example, when registering for or using
+								Company affiliate services. NCAE may also obtain content provided by you, such as survey responses, reviews and comments;
+								information provided to us by social networks when you visit Company affiliate social media platforms, social networking
+								sites or otherwise register on a Company affiliate site or application through your social network account (such
+								as name, likes, location, friends list and other information described when you connect with the social networking
+								platform). The specific information we obtain depends on your privacy settings on the applicable social media network.
+								All of this information is referred to as &ldquo;Other Data&rdquo;.</p>
+							<p>&nbsp;</p>
+							<div id="section1_3">
+
+								<p>
+									<strong>
+										<u>Activity Information</u>
+									</strong>
+								</p>
+							</div>
+							<p>We also obtain certain information by automated means, such as cookies (including HTTP, HTML5 and Flash cookies),
+								web beacons, web server logs, JavaScript and similar technologies, including technologies designed to obtain information
+								regarding your usage of various Company affiliate sites and applications, and other offerings and services. A &ldquo;cookie&rdquo;
+								is a file that websites send to a user&rsquo;s computer or other Internet-connected device to identify the user&rsquo;s
+								browser or to store information or settings in the browser. A &ldquo;web beacon&rdquo; also known as an Internet
+								tag, pixel tag or clear GIF, links web pages to web servers and their cookies and may be used to transmit information
+								collected through cookies back to a web server. The information the Company obtains through these automated collection
+								methods may include IP address, mobile device advertising ID, browser characteristics, device characteristics, operating
+								system, language preferences, referring URLs, information on actions taken on Company affiliate sites, and dates
+								and times users access or use Company affiliate sites. We may link certain Activity Information, such as browser
+								or device information, with other Activity Information, such as whether an email sent to you has been opened, what
+								search queries you may have run, and what advertisements you may have seen on Company affiliate or business partner
+								sites. We also may use similar automated means to obtain and store similar information regarding user&rsquo;s actions
+								while using Company affiliate mobile applications. All of this information is known as &ldquo;Activity Information&rdquo;.</p>
+							<p>You also may be able to delete Flash cookies or adjust Flash cookie settings by visiting the Adobe Flash
+								<u>Website Storage Settings Panel</u> and
+								<u>Global Storage Settings Pane</u>
+								<u>l</u>. Please note, however, that without cookies some or all of the features of the Company affiliate services may
+								not be available to you. User device settings also may limit mobile application platforms (such as Apple and Google)
+								from sharing certain information obtained by automated means with us through our Company affiliate applications.</p>
+							<p>&nbsp;</p>
+							<p>
+								<strong>
+									<u>News IQ ID &amp; ID Syncing</u>
+								</strong>
+							</p>
+							<p>NCAE associates Activity Information it collects about a browser or device with a randomly generated, pseudonymous
+								identifier known as the &ldquo;NCG ID&rdquo;. To the extent permitted by your browser settings, NCAE syncs the NCG
+								ID with identifiers and Activity Information collected from the participating Company affiliate sites you or the
+								specific browser or device have visited in an effort to serve you advertisements on our Company affiliate sites and
+								applications that aim to be tailored to your interests, as further described in the
+								<em>Interest-Based Advertising</em> Section below.</p>
+							<p>ID syncing, also known as cookie syncing or cookie matching, is a common industry practice that enables businesses
+								to use data to coordinate an advertising campaign across multiple publishing platforms and advertising service providers.
+								As an example, an individual uses a web browser to visit a publisher&rsquo;s website and then leaves the website.
+								The publisher wants to advertise relevant services to that visitor after he/she leaves the website. To do so, the
+								publisher stores a cookie on the visitor&rsquo;s browser with an ID (such as &ldquo;123&rdquo;) and associates the
+								ID with information about what the visitor viewed on the publisher&rsquo;s website, and buys advertising through
+								an online advertising exchange or marketplace. In order to buy appropriate advertising to display to that visitor,
+								the publisher would need to match the &ldquo;123&rdquo; ID with the ID that the exchange has assigned to the same
+								visitor (for example, exchange ID &ldquo;XYZ&rdquo;). Using ID syncing, the publisher &ldquo;123&rdquo; ID is associated
+								with the same browser or device as the exchange ID &ldquo;XYZ&rdquo;, and the publisher may be able to show more
+								relevant advertisements to the visitor based on the initial information the publisher collected from that visitor
+								when the visitor was on the publisher&rsquo;s site. This syncing can be done across multiple sites.</p>
+							<div id="section1_4">
+
+								<p>
+									<strong>
+										<u>Information About Users of NCAE&rsquo;s Sales/Promotional Site</u>
+									</strong>
+								</p>
+							</div>
+							<p>NCAE also maintains a sales/promotional site, where potential advertisers, third party partners and other users may
+								learn about NCAE&rsquo;s offerings and services. When a user visits such site, we may collect your contact information
+								(name, email address and phone number), your company name and title of your position within your company, all to
+								the extent you provide such information to us.</p>
+							<p>&nbsp;</p>
+							<div id="section2">
+
+								<p>
+									<strong>
+										<u>How We Use the Information We Obtain</u>
+									</strong>
+								</p>
+							</div>
+							<p>We use the information collected from and about you to:</p>
+							<ul>
+								<li>Supplement Personal Information collected by the Company and our affiliates with additional information from publicly
+									and commercially available sources, and make inferences regarding your preferences and further supplement your profile
+									with such inferred preferences to provide relevant content and advertising;</li>
+								<li>Display targeted advertising and otherwise send promotional materials, alerts regarding available offers and other
+									communications, including communications through our Company affiliate sites and applications, and via email;</li>
+								<li>Customize your visits to and use of our Company affiliate sites and applications, and deliver content (including
+									advertising) tailored to your interests and the manner in which you use our Company affiliate sites and applications;</li>
+								<li>Communicate about, and administer participation in, special events, promotions, programs, offers, surveys, contests
+									and market research;</li>
+								<li>Anonymize or pseudonymize Personal Information to provide third parties with aggregated data reports showing anonymized
+									or pseudonymized information and other non-Personal Information;</li>
+								<li>If you are an advertiser, partner or other user of our sales/promotional site, communicate with you about our offers
+									and services and otherwise respond to your inquiries;</li>
+								<li>Associate your browser and/or device with other browsers or devices you use for the purpose of providing relevant
+									and easier access to content, advertising across browsers and devices, and other operational/business purposes;</li>
+								<li>Operate, evaluate and improve our business (including developing, enhancing, analyzing and improving our programs
+									and offerings; managing our communications; performing data analytics; and performing accounting, auditing and other
+									internal functions);</li>
+								<li>Protect against, identify and prevent fraud and other unlawful activity, claims and other liabilities; and</li>
+								<li>Comply with and enforce applicable legal requirements, relevant industry standards, contractual obligations and our
+									policies.
+								</li>
+							</ul>
+							<p>We also may use your Personal Information in other ways for which we provide specific notice at the time of collection.
+								In addition, when the information collected from or about you does not identify you as a specific person, we may
+								use it in any lawful manner.</p>
+							<p>&nbsp;</p>
+							<div id="section3">
+
+								<p>
+									<strong>
+										<u>Interest-Based Advertising</u>
+									</strong>
+								</p>
+							</div>
+							<p>On our Company affiliate sites, applications and/or emails, we and our service providers obtain information about
+								your activities to provide you with advertising about products and services tailored to your individual interests.</p>
+							<p>News IQ serves as an advertising exchange to help our advertisers target their messaging to users through interest-based
+								and contextual means. Throughout our advertising exchange for our Company affiliate sites and applications, we can
+								gather information about online activities over time and across Company affiliate sites and applications by obtaining
+								Personal Information, Other Data and Activity Information, as described above. Our exchange uses all such information
+								to show users advertisements on our Company affiliate sites and applications that aim to be tailored to your individual
+								interests. Collection of Activity Information, Personal Information and Other Data currently takes place on Company
+								affiliate sites, applications and emails that participate in our advertising exchange. This process also helps us
+								track the effectiveness of marketing campaigns conducted through the advertising exchange.</p>
+							<p>The Company adheres to the Digital Advertising Alliances Self-Regulatory Principles and provides users choice with
+								respect to the Company advertising exchange interest-based advertising. To learn how to opt out of the News IQ interest-based
+								advertising see the section on
+								<em>Your Choices</em> below.</p>
+							<p>In the future, the Company may expand its services and serve as a third-party advertising exchange, at which point,
+								all the same information and data as described in this Notice will be obtained by NCAE from its business partners
+								participating in the third-party advertising exchange and used in the same manner and for the same purposes as described
+								in this Notice. Such data collection and advertising activity will then also take place on our business partner sites,
+								applications and emails. Users will continue to be provided choice with respect to News IQ interest-based advertising.</p>
+							<p>&nbsp;</p>
+							<div id="section4">
+
+								<p>
+									<strong>
+										<u>Information We Share</u>
+									</strong>
+								</p>
+							</div>
+							<p>We may share your Personal Information, Other Data and Activity Information with:</p>
+							<ul>
+								<li>Our affiliates, any of whom may use Personal Information consistent with this Privacy Notice or for each of their
+									own purposes, including marketing purposes. A current list of our affiliated companies is available at
+									<a href="http://newscorp.com/about/our-businesses/">http://newscorp.com/about/our-businesses/</a>.</li>
+								<li>Service providers in the US and other jurisdictions who perform services on our behalf.</li>
+								<li>Our clients for thier own marketing purposes, such as to serve targeted advertisements.</li>
+							</ul>
+							<p>In addition, when the information collected from or about you does not identify you as a specific person, we may share
+								it with third parties at our discretion.</p>
+							<p>We may further disclose information about you (1) if we are required to do so by law or legal process, (2) to law
+								enforcement authorities or other government officials, and (3) when we believe disclosure is necessary or appropriate
+								to prevent physical harm or financial loss, or in connection with an investigation of suspected or actual fraudulent
+								or illegal activity. We also reserve the right to transfer information in the event of a proposed or completed sale
+								or transfer of all or a portion of our business or assets (including in the event of a reorganization, dissolution
+								or liquidation).</p>
+							<p>&nbsp;</p>
+							<div id="section5">
+								<p>
+									<strong>
+										<u>Your Choices </u>
+									</strong>
+								</p>
+							</div>
+							<p>We offer you certain choices in connection with the information we obtain.</p>
+							<p>If you wish to opt out of receiving customized advertisements from News IQ, you may click
+								<a href="http://www.aboutads.com/choices">
+									<u>here</u>
+								</a> or visit
+								<a href="http://www.aboutads.com/choices">www.aboutads.com/choices</a>. Please note that opting out of receiving customized or interest-based advertisements
+								from the Company will only opt you out of receiving customized or interest-based advertisements from News IQ, and
+								you may continue to receive customized or interest-based advertisements from others, including the Company affiliates,
+								and each of their advertising networks, and/or advertisements that are not tailored to your interests. For more information
+								about interest-based advertisements, and to opt out of other advertising for companies participating in self-regulatory
+								programs, please visit:
+								<a href="http://www.aboutads.com/choices">www.aboutads.com/choices</a> and
+								<a href="http://www.networkadvertising.org/choices">www.networkadvertising.org/choices</a>.</p>
+							<p>If you are an advertiser, partner or other user of our sales/promotional site, you may ask us to remove your information
+								from our mailing lists by contacting us as outlined in the
+								<em>How To Contact Us</em> Section below.</p>
+							<p>&nbsp;</p>
+							<div id="section5_1">
+
+								<p>
+									<strong>
+										<u>Accessing, Reviewing, Updating and Modifying Personal Information </u>
+									</strong>
+								</p>
+							</div>
+							<p>Subject to applicable law, you may be provided access to, and/or be able to review, update, and correct inaccuracies
+								in the Personal Information obtained about you in the Company&rsquo;s custody and control by emailing or writing
+								to us at the contact information set out below. We may request certain personal information for the purposes of verifying
+								the identity of the individual seeking access to his/her Personal Information records.</p>
+							<p>If you are in the European Union/European Economic Area, you may request to access, rectify or erase (under certain
+								circumstances) your Personal Information. You have the right to object to the processing of your Personal Information,
+								restrict the processing of your Personal Information and exercise your right to data portability (under certain circumstances).
+								Where you have given us your consent for specified uses of your Personal Information, you have the right to withdraw
+								such consent at any time and we will apply your preferences for the future. We will respond to your questions or
+								complaints relating to the processing of your Personal Information. If you are not satisfied with our responses,
+								you have the right to lodge a complaint with a supervisory authority.</p>
+							<p>&nbsp;</p>
+							<div id="section6">
+
+								<p>
+									<strong>
+										<u>Notice to California Residents</u>
+									</strong>
+								</p>
+							</div>
+							<p>Subject to certain limitations, California residents may ask us to provide them with (1) a list of certain categories
+								of Personal Information that we have disclosed to third parties for their direct marketing purposes during the immediately
+								preceding calendar year, and (2) the identity of those third parties. To make this request, California residents
+								may contact us as specified in the
+								<em>How to Contact Us</em> section below.</p>
+							<p>&nbsp;</p>
+							<div id="section7">
+
+								<p>
+									<strong>
+										<u>How We Protect and Retain Personal Information</u>
+									</strong>
+								</p>
+							</div>
+							<p>We maintain administrative, technical and physical safeguards designed to protect the Personal Information we have
+								about you against accidental, unlawful or unauthorized destruction, loss, alteration, access, disclosure or use.
+								We make reasonable efforts to ensure a level of security appropriate to the risk of the processing, taking into account
+								the costs of implementation and nature of the processing of Personal Information.</p>
+							<p>We retain Personal Information for the period needed to fulfill the purposes for which Personal Information was collected
+								and as otherwise required or permitted by applicable law, such as in relation to our record retention obligations.</p>
+							<p>&nbsp;</p>
+							<div id="section8">
+
+								<p>
+									<strong>
+										<u>Transfers of Information</u>
+									</strong>
+								</p>
+							</div>
+							<p>The information obtained by the Company may be hosted in and managed from a country outside the country in which users
+								initially provided the information, including the United States. We may transfer the Personal Information we collect
+								about you to the United States and/or another country, which may not be deemed to have the same data protection laws
+								as the country in which you initially provided the Personal Information. When your Personal Information is in such
+								countries, it may be accessed by the courts, law enforcement and national security authorities in accordance with
+								applicable law. If you are located outside the United States or the country to which your information may be transferred,
+								you understand and consent to having any Personal Information processed in the United States and/or such country.
+								Such consent includes the use of cookies and other tracking technologies as described above. When we transfer your
+								Personal Information, we will protect that Information as described in this Notice. If your Personal Information
+								is transferred from the European Union/European Economic Area, we will implement appropriate safeguards to ensure
+								that your Personal Information remains protected. This may include data transfer agreements, a copy of which you
+								can obtain by contacting us as indicated in the
+								<em>How To Contact Us</em> Section
+								<strong>[insert hyperlink to Section]</strong> below.</p>
+							<p>&nbsp;</p>
+							<div id="section9">
+
+								<p>
+									<strong>
+										<u>Updates to Our Privacy Notice</u>
+									</strong>
+								</p>
+							</div>
+
+							<p>This Privacy Notice may be updated periodically and without prior notice to reflect changes in our Personal Information
+								practices. For significant changes, we will notify you by posting a notice where the Notice is accessible and indicating
+								at the top of the Notice when it was most recently updated.</p>
+							<p>&nbsp;</p>
+							<div id="section10">
+
+								<p>
+									<strong>
+										<u>How To Contact Us</u>
+									</strong>
+								</p>
+							</div>
+							<p>The entity responsible for the collection and processing of Personal Information through the News IQ products and
+								services is NC Audience Exchange, LLC, 1211 Avenue of the Americas, New York, NY 10036.</p>
+							<p>For any questions about this Privacy Notice or the manner in which we or our service providers treat your Personal
+								Information, or if you would like to exercise your choices as described above, please contact us as follows:</p>
+							<p>
+								<a href="mailto:privacypolicy@newscorp.com">privacypolicy@newscorp.com</a>
+							</p>
+							<p>Users also may write to:
+								<br /> Privacy Office
+								<br /> News IQ
+								<br /> c/o News Corporation
+								<br /> 1211 Avenue of the Americas
+								<br /> New York, NY 10036
+								<br /> Attn: Legal Department</p>
+							<p>&nbsp;</p>
+
+							<div id="companiesList">
+								<p>
+									<strong>
+										<u>News IQ Participating Brands and Properties</u>
+									</strong>
+								</p>
+							</div>
+							<ul>
+								<li>NYP Holdings (New York Post):
+									<ul>
+										<li>New York Post:
+											<a href="http://www.nypost.com">nypost.com</a>
+										</li>
+										<li>Page Six:
+											<a href="http://www.pagesix.com">pagesix.com</a>
+										</li>
+										<li>Decider:
+											<a href="http://www.decider.com">decider.com</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>Dow Jones:
+									<ul>
+										<li>Wall Street Journal:
+											<a href="http://www.wsj.com">wsj.com</a>
+										</li>
+										<li>Barrons:
+											<a href="http://www.barrons.com">barrons.com</a>
+										</li>
+										<li>MarketWatch:
+											<a href="http://www.marketwatch.com">marketwatch.com</a>
+										</li>
+										<li>Mansion Global:
+											<a href="http://www.mansionglobal.com">mansionglobal.com</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>Move:
+									<ul>
+										<li>Realtor:
+											<a href="http://www.realtor.com">realtor.com</a>
+										</li>
+										<li>Move:
+											<a href="http://www.move.com">move.com</a>
+										</li>
+										<li>Remodelista:
+											<a href="http://www.remodelista.com">remodelista.com</a>
+										</li>
+										<li>Gardenista:
+											<a href="http://www.gardenista.com">gardenista.com</a>
+										</li>
+										<li>Organized Home:
+											<a href="http://www.organized-home.com">organized-home.com</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>HarperCollins Publishers:
+									<ul>
+										<li>HarperCollins:
+											<a href="http://www.harpercollins.com">harpercollins.com</a>
+										</li>
+										<li>Bible Gateway:
+											<a href="http://www.biblegateway.com">biblegateway.com</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>Sun:
+									<ul>
+										<li>The Sun:
+											<a href="http://www.thesun.co.uk">thesun.co.uk</a>
+										</li>
+										<li>The Scottish Sun:
+											<a href="http://www.thescottishsun.co.uk">thescottishsun.co.uk</a>
+										</li>
+										<li>The Irish Sun:
+											<a href="http://www.thesun.ie">thesun.ie</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>Times:
+									<ul>
+										<li>The Times:
+											<a href="http://www.thetimes.co.uk">thetimes.co.uk</a>
+										</li>
+										<li>The Sunday Times Driving:
+											<a href="http://www.driving.co.uk">driving.co.uk</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>Talksport:
+									<ul>
+										<li>Talksport:
+											<a href="http://www.talksport.com">talksport.com</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+
+
+						</div>
+					</td>
+				</tr>
+
+
+			</table>
+
+
+		</div>
+	</footer>
+
+
+	<!-- <footer style="position: relative;">
+		<a href="#" class="footer-link">Privacy Policy</a>  |   <a href="#" class="footer-link">Cookie Policy</a>  |   <a href="#" class="footer-link">Copyright Policy</a>  |   <a href="#" class="footer-link">Data Policy</a>  |   <a href="#" class="footer-link">Subscriber Agreement &amp; Terms of Use</a>  |   <a href="#" class="footer-link">Your Ad Choices</a><br>
+		Copyright ©2017 Dow Jones &amp; Company, Inc. All Rights Reserved.
+	</footer> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+
+	<!-- <script src="js/jquery.serialize-object.js">
+	</script> 
+	<script src="js/script.js">
+	</script> -->
+	<script>
+		$(document).ready(function () {
+			
+			$("#companiesList_btn").click(function () {
+				$('html, body').animate({
+					scrollTop: $("#companiesList").offset().top
+				}, 500);
+			});
+			
+			// $("#section1_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section1").offset().top
+			// 	}, 500);
+			// });
+			
+			// $("#section2_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section2").offset().top
+			// 	}, 500);
+			// });
+			// $("#section3_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section3").offset().top
+			// 	}, 500);
+			// });
+			// $("#section4_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section4").offset().top
+			// 	}, 500);
+			// });
+			// $("#section5_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section5").offset().top
+			// 	}, 500);
+			// });
+			// $("#section6_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section6").offset().top
+			// 	}, 500);
+			// });
+			// $("#section7_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section7").offset().top
+			// 	}, 500);
+			// });
+			// $("#section8_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section8").offset().top
+			// 	}, 500);
+			// });
+			// $("#section9_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section9").offset().top
+			// 	}, 500);
+			// });
+			// $("#section10_btn").click(function () {
+			// 	$('html, body').animate({
+			// 		scrollTop: $("#section10").offset().top
+			// 	}, 500);
+			// });
+		});
+	</script>
+	<script src="./js/script.js"></script>
+</body>
+
+</html>

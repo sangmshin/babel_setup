@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+.pattern .legal div {
+	max-height: 0;
+	overflow: hidden;
+	margin: 0;
+}
+
+.pattern .legal h1 a {
+	display: block;
+	position: relative;
+}
+
+.pattern #disclaimer:target div {
+	max-height: 10099px;
+	margin: 16px 0;
+	-webkit-transition: max-height 0.5s ease-out;
+	-moz-transition: max-height 0.5s ease-out;
+	-ms-transition: max-height 0.5s ease-out;
+	-o-transition: max-height 0.5s ease-out;
+	transition: max-height 0.5s ease-out;
+}
+
+input {
+	max-width: 500px;
+	width: 100%;
+	height: 36px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 15px;
+	font-family: 'Ubuntu';
+	font-size: 1.0em;
+	padding-left: 20px;
+	color: #12132f
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Ubuntu';
+	background: #12132f;
+	color: white;
+}
+
+section {
+	position: relative;
+	width: 100%;
+}
+
+footer {
+	position: relative;
+	padding: 2.4em 2em;
+	font-family: Ubuntu, Helvetica, Arial, sans-serif;
+	font-size: .7em;
+	line-height: 1.7em;
+	text-align: center;
+	color: #ddd;
+	background: #00b3bb;
+	z-index: 99;
+}
+
+.cl {
+	display: block;
+	clear: both;
+}
+
+.section-mobile {
+	/*background-image: url('../img/devices_bg.jpg');*/
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.section-mobile img {
+	position: absolute;
+	z-index: 10000;
+	max-width: 1400px;
+}
+
+.section-cta {
+	background-image: url("../img/section-cta-header.png");
+	background-size: cover;
+	background-position: center;
+}
+
+.section-cta .cta-wrapper {
+	padding-top: 0%;
+}
+
+.successMessage {
+	display: none;
+}
+
+.disclaimer-copy {
+	font-size: 20px;
+	padding-left: 40px;
+}
+
+.disclaimer-float-left {
+	float: left;
+	max-width: 500px;
+}
+
+.disclaimer-float-right {
+	float: left;
+	max-width: 515px;
+	padding-left: 50px;
+}
+
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: #ccc;
+	font-family: 'Ubuntu';
+	font-size: 1.0em;
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #ccc;
+	font-family: 'Ubuntu';
+	font-size: 1.0em;
+}
+
+:-ms-input-placeholder {
+	/* IE 10+ */
+	color: #ccc;
+	font-family: 'Ubuntu';
+	font-size: 1.0em;
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: #ccc;
+	font-family: 'Ubuntu';
+	font-size: 1.0em;
+}
+
+.section-contact {
+	background-color: #00b3bb
+}
+
+.section-contact .holder {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.section-contact .cta-wrapper {
+	max-width: 100%;
+}
+
+.disclaimer {
+	font-weight: 300;
+	padding: 0;
+	margin-top: 0px;
+	font-size: 20px;
+}
+
+#submit-form {
+	width: 250px;
+	height: 53px;
+	border-radius: 5px;
+	background-color: #12132f;
+	color: #fff;
+	font-family: 'Ubuntu';
+	font-size: 27px;
+	letter-spacing: 0.1em;
+	font-weight: 600;
+	border: none;
+	margin-top: 20px;
+}
+
+.footer-link {
+	color: #fff;
+}
+
+.svg-logo {
+	position: relative;
+	margin: 0 0 0 24px;
+	text-decoration: none;
+	vertical-align: middle;
+	fill: #e50914;
+	display: inline-block;
+	line-height: 90px;
+	z-index: 1;
+}
+
+.newsiq-logo {
+	height: 325px;
+	width: 200px;
+	vertical-align: middle;
+}
+
+.backdrop,
+.diag {
+	position: relative;
+	width: 100%;
+	height: auto;
+	text-align: right;
+	z-index: 0;
+}
+
+.backdrop>img {
+	width: 140%;
+}
+
+.cta-wrapper {
+	position: relative;
+	z-index: 13;
+	left: 0;
+	padding: 0 24px;
+	width: 100%;
+}
+
+.cta-wrapper p {
+	padding-bottom: 20px;
+	color: #fff;
+	font-weight: 100;
+	font-size: 0.9em;
+}
+
+.content-wrapper {}
+
+.cta-wrapper .cta-pitch {
+	font-family: 'Ubuntu';
+	color: #fff;
+	margin: 0 0 .5em;
+	font-size: 2em;
+	line-height: 1.2em;
+	font-weight: 100;
+}
+
+.section-cta .cta-wrapper .cta-pitch {
+	font-size: 2.6em;
+}
+
+.cta-wrapper .cta-signup {
+	font-size: 1.6em;
+}
+
+.cta-signup-input-group {
+	margin: 0 0 1.4em;
+}
+
+.cta-wrapper .cta-signup>span {
+	display: block;
+	margin: 0 0 1.4em;
+	color: #fff;
+}
+
+.section-mobile .cta-wrapper .cta-signup>span {
+	padding-top: 42px;
+	font-size: .94em;
+}
+
+.cta-wrapper .cta-agreement,
+.cta-wrapper .cta-copy {
+	margin: 0 0 1em;
+	font-size: 0.9em;
+	line-height: 1.5;
+	color: #ddd;
+}
+
+.cta-wrapper .cta-agreement {
+	margin: 0 0 .8em;
+	font-size: 1em;
+}
+
+.section-mobile .cta-wrapper {
+	width: 100%;
+	max-width: 70%;
+	position: relative;
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+.section-mobile .cta-wrapper .cta-copy {
+	margin: 0 0 2.4em;
+}
+
+.cta-wrapper .cta-signup .cta-signup-input {
+	margin-bottom: 0;
+	padding: .9rem .75rem;
+	font-family: 'Ubuntu';
+	font-size: 1.2rem;
+	line-height: 1.25;
+	color: #000;
+	background-color: #ddd;
+	background-image: none;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: none;
+	position: relative;
+	z-index: 2;
+}
+
+.cta-wrapper .cta-signup .cta-signup-btn {
+	padding: 0.8rem 1.6rem;
+	font-family: 'Ubuntu';
+	font-size: 1.0em;
+	letter-spacing: .30em;
+	font-weight: 600;
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+	text-transform: uppercase;
+	background-color: #00B3BB;
+}
+
+.cta-wrapper .cta-signup .cta-signup-btn:hover {
+	background-color: #21b6bc;
+	cursor: pointer;
+}
+
+.content-wrapper {
+	width: 600px;
+}
+
+.mobile-msg {
+	padding: 2em;
+	width: 100%;
+	height: 100%;
+	font-size: 1.6em;
+	text-align: center;
+	color: #ddd;
+	background: #3f3f3f;
+	display: none;
+}
+
+.backdrop>.testimonials {
+	position: relative;
+	padding: 3%;
+	font-size: 2.3vw;
+}
+
+.testimonials>.headshot {
+	position: absolute;
+	width: 22%;
+	border-radius: 50%/50%;
+	overflow: hidden;
+}
+
+.testimonials img {
+	width: 700px;
+}
+
+.testimonials>span {
+	position: absolute;
+	width: 21.5%;
+	text-align: left;
+	font-size: 1em;
+	line-height: 1.5;
+	color: #ddd;
+}
+
+.container {
+	position: relative;
+	float: left;
+	margin-bottom: 23px;
+}
+
+.container input {
+	position: absolute;
+	opacity: 0;
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	border: 1px #fff solid;
+}
+
+.container:hover input~.checkmark {
+	background-color: #ccc;
+}
+
+.container input:checked~.checkmark {
+	background-color: #12132f;
+}
+
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.container input:checked~.checkmark:after {
+	display: block;
+}
+
+.container .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.testimonials {
+	float: right;
+	margin-top: -10%;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------ media queries ------------------------------------------------ */
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+@media (max-width:2560px) {
+	.wrapper {
+		max-width: 1340px;
+		margin: 0 auto;
+	}
+	.disclaimer {
+		padding-bottom: 0px !important;
+	}
+	.cta-wrapper .cta-signup .cta-signup-btn {
+		padding: 0.8rem 1.6rem;
+		font-family: 'Ubuntu';
+		font-size: 1.0em;
+		letter-spacing: 0.1em;
+		font-weight: 600;
+		color: #fff;
+		border-radius: 5px;
+		border: none;
+		text-transform: uppercase;
+		background-color: #00B3BB;
+		transform: scale(0.7, 0.7);
+		margin-left: -36px;
+		width: 243px;
+	}
+	section {
+		position: relative;
+		width: 100%;
+		min-height: 600px !important;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	.section-mobile {
+		background-size: 50%;
+		background-repeat: no-repeat;
+		background-position: top center;
+	}
+	.section-mobile .cta-wrapper .cta-pitch {
+		max-width: 500px;
+	}
+	.testimonials {
+		float: right;
+		margin-top: -230px;
+	}
+	.section-revolutionary .testimonials {
+		float: right;
+		margin-top: -280px;
+	}
+	.cta-wrapper {
+		padding-top: 5%;
+	}
+	.section-cta {
+		background-image: url(../img/section-cta-header.png);
+		background-size: 1700px;
+		background-position: top center;
+		min-height: 662px !important;
+		background-repeat: no-repeat;
+	}
+	.section-cta .cta-wrapper .cta-pitch {
+		font-size: 2.5em;
+		max-width: 600px;
+	}
+	.cta-wrapper p {
+		max-width: 350px;
+		font-size: 1.0em;
+		line-height: 1.5em;
+	}
+	.section-contact .cta-wrapper p {
+		font-size: .875em;
+	}
+	.disclaimer-copy {
+		font-size: 0.875em;
+		margin-top: 4px;
+		display: inline-block;
+	}
+	.cta-wrapper .cta-pitch {
+		font-size: 1.875em;
+		max-width: 340px;
+	}
+	.cta-wrapper .cta-agreement,
+	.cta-wrapper .cta-copy {
+		margin: 0 0 1em;
+		font-size: 1.0em;
+		line-height: 1.5;
+		color: #ddd;
+	}
+	.section-contact {
+		padding-top: 0%;
+		min-height: 465px !important;
+	}
+	.section-mobile {
+		min-height: 900px !important;
+	}
+	.section-mobile img {
+		width: 1300px;
+	}
+	.deviceHolder {
+		width: 650px;
+		margin: 0 auto;
+	}
+	#submit-form {
+		width: 170px;
+		height: 36px;
+		border-radius: 5px;
+		background-color: #12132f;
+		color: #fff;
+		font-family: 'Ubuntu';
+		font-size: 1.0em;
+		letter-spacing: 0.1em;
+		font-weight: 600;
+		border: none;
+		margin-top: 20px;
+		cursor: pointer;
+	}
+}
+
+@media (max-width:1440px) {
+	section {
+		position: relative;
+		width: 100%;
+		min-height: 500px !important;
+	}
+	.section-cta {
+		background-size: 1500px;
+		min-height: 555px !important;
+	}
+	.section-mobile img {
+		width: 1000px;
+	}
+	.deviceHolder {
+		width: 550px;
+		margin: 0 auto;
+	}
+	.section-mobile {
+		min-height: 800px !important;
+	}
+	.testimonials img {
+		width: 600px;
+	}
+	.section-contact {
+		padding-top: 0%;
+		min-height: 600px !important;
+	}
+	.disclaimer-float-right {
+		float: left;
+		max-width: 500px;
+		padding-left: 50px;
+	}
+}
+
+@media (max-width: 1060px) {
+	.disclaimer-float-right {
+		padding-left: 0px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.testimonials img {
+		width: 400px;
+	}
+	.section-mobile img {
+		width: 800px;
+	}
+	.deviceHolder {
+		width: 500px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 900px) {}
+
+@media (max-width: 800px) {
+	section {
+		min-height: 300px !important;
+	}
+	.section-mobile {
+		min-height: 500px !important;
+	}
+	.testimonials img {
+		width: 300px;
+	}
+	.disclaimer-float-right {
+		float: left;
+		max-width: 515px;
+		padding-left: 0px;
+	}
+	.section-mobile img {
+		position: absolute;
+		z-index: 10000;
+		max-width: 500px;
+	}
+	.deviceHolder {
+		width: 500px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 745px) {
+	.section-revolutionary .testimonials {
+		float: none;
+		margin-top: 0;
+	}
+	.testimonials {
+		float: none;
+		margin-top: 0%;
+		padding-right: 5%;
+	}
+}
+
+@media (max-width: 500px) {
+	.section-revolutionary .testimonials {
+		padding-left: 0%;
+	}
+	.testimonials {
+		float: none;
+		margin-top: 0;
+		padding-right: 0%;
+		padding-left: 5%;
+	}
+	.testimonials img {
+		width: 325px;
+	}
+	.section-cta {
+		background-size: 1250px;
+		min-height: 450px !important;
+	}
+	.newsiq-logo {
+		height: 180px;
+		width: 200px;
+		vertical-align: middle;
+	}
+	.section-mobile {
+		min-height: 400px !important;
+	}
+	section {
+		min-height: 430px !important;
+		padding-left: 0%;
+		padding-right: 2%;
+	}
+	.cta-wrapper .cta-agreement,
+	.cta-wrapper .cta-copy {
+		font-size: 0.9em;
+	}
+	.cta-wrapper p {
+		max-width: 460px;
+		font-size: 0.9em;
+		line-height: 1.5em;
+	}
+	.cta-wrapper .cta-signup .cta-signup-btn {
+		font-size: 0.9em;
+	}
+	.section-cta .cta-wrapper .cta-pitch {
+		font-size: 1.5em;
+	}
+	.section-cta .cta-wrapper .cta-pitch {
+		font-size: 2.0em;
+	}
+	.section-mobile img {
+		position: absolute;
+		z-index: 10000;
+		max-width: 300px;
+	}
+	.deviceHolder {
+		width: 300px;
+		margin: 0 auto;
+	}
+	.cta-wrapper .cta-pitch {
+		font-size: 1.375em;
+	}
+}
+
+@media (max-width: 320px) {
+	section {
+		min-height: 430px !important;
+		padding-left: 0%;
+		padding-right: 2%;
+	}
+	.newsiq-logo {
+		height: 180px;
+		width: 200px;
+		vertical-align: middle;
+	}
+	.cta-wrapper .cta-signup .cta-signup-btn {
+		font-size: 0.9em;
+	}
+	.section-cta .cta-wrapper .cta-pitch {
+		font-size: 1.5em;
+	}
+	.section-cta {
+		background-size: 1250px;
+		min-height: 450px !important;
+	}
+	.section-revolutionary .testimonials {
+		padding-left: 0%;
+	}
+	.testimonials {
+		padding-left: 5%;
+		padding-right: 0%;
+		margin-top: -10% !important;
+	}
+	.testimonials img {
+		width: 280px;
+	}
+	.section-revolutionary .testimonials img {
+		width: 300px;
+	}
+	.section-mobile img {
+		position: absolute;
+		z-index: 10000;
+		max-width: 270px;
+	}
+	.section-mobile .cta-wrapper {
+		max-width: 90%;
+	}
+	.section-mobile {
+		min-height: 350px !important;
+	}
+	.section-publishers {
+		min-height: 380px !important
+	}
+	.section-contact {
+		padding-top: 0%;
+		min-height: 630px !important;
+	}
+}
